@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=TT+Firs+Neue&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="blue_image">
+        <div class="container">
+            <div class="header ">
+                <div class="header_logo "><img src="images/logo.svg " alt="cyber-ed.ru "></div>
+                <div class="header_contacts">
+                    <div clchildss="header_mail ">info@cyber-ed.ru</div>
+                    <div class="header_web ">cyber-ed.ru</div>
+                    <div class="header_tel ">+7 (495) 181 00 79</div>
+                </div>
+            </div>
+            <div class="blue_title ">Тактика сканирования<br>IP-адресов</div>
+            <div class="blue_title_small ">Входные требования</div>
+            <div class="blue_enter ">
+                <div class="blue_entr_item ">Входные тактики
+                    <div class="blue_entr_item_descr ">Не требуется знаний конкретных тактик</div>
+                </div>
+                <div class="blue_entr_item ">Входные инструменты
+                    <div class="blue_entr_item_descr ">Командная строка Linux</div>
+                </div>
+            </div>
+            <div class="blue_entr_item title_entr">Входные умения</div>
+            <div class="blue_require ">
+                <div class="require_item ">
+                    <div class="req_item_numb ">01</div>
+                    <div class="req_item_descr ">Знать основы сетевого взаимодействия между узлами сети (Модель TCP/IP по стандарту RFC 1180)</div>
+                </div>
+                <div class="line-block"></div>
+                <div class="require_item ">
+                    <div class="req_item_numb ">02</div>
+                    <div class="req_item_descr ">Базовые знания о работе протоколов ICMP, TCP/UDP и ARP (Модель TCP/IP по стандарту RFC 1180)</div>
+                </div>
+                <div class="line-block"></div>
+                <div class="require_item ">
+                    <div class="req_item_numb ">03</div>
+                    <div class="req_item_descr ">Уметь работать с ОС Linux или ОС Windows на уровне продвинутого пользователя (Установка пакетов, работа с системой с помощью терминальной оболочки)</div>
+                </div>
+            </div>
+            <div class="blue_last ">
+                <div class="blue_entr_item last_item ">Входные понятия
+                    <div class="concept">
+                        <div class="item_concept ">TCP/IP</div>
+                        <div class="item_concept ">TCP/UDP</div>
+                        <div class="item_concept ">ICMP</div>
+                        <div class="item_concept ">ARP</div>
+                    </div>
+                </div>
+
+                <div class="blue_entr_item last_item ">Входные стандарты
+                    <div class="concept">
+                        <div class="item_concept ">RFC 1180</div>
+                        <div class="item_concept ">RFC 792</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="white">
+        <div class="container">
+            <div class="tactic">
+                <div class="tactic_title"><span>Задача</span>
+                    <div class="tactic_descr">Эта тактика решает задачу<br>обнаружения "живых " хостов в сети<br>и составления списка их IP-адресов
+                    </div>
+                </div>
+                <div class="tactic_title"><span>Механизм действия</span>
+                    <div class="tactic_descr">Основана на стандартах<br><span>[RFC 1180]</span> и <span>[RFC 792]</span></div>
+                </div>
+            </div>
+            <div class="tactic_black">
+                <div class="title">Основана на правилах
+                    <div class="descr"> Тактика основана на работе сетевых протоколов ICMP, TCP/UDP и ARP. На данный момент без работы этих протоколов невозможно создать рабочую сеть.</div>
+                </div>
+            </div>
+            <div class="white_rec">
+                <div class="item">
+                    <div class="title"><span>ICMP</span></div>
+                    <div class="descr">ICMP - это протокол сетевого уровня стека TCP/IP, предназначенный для передачи сервисных сообщений на низком (сетевом) уровне. Обычно используется для передачи сообщений об ошибках и других исключительных ситуациях, возникших при передаче
+                        данных, например, недоступность хоста. ICMP включает в себя несколько типов сообщений, и в их числе *echo request*(8) и *echo responce*(0), которые используются для проверки доступности узлов: если хост получил эхо-запрос, он отправляет
+                        обратно эхо-ответ, что говорит об его доступности</div>
+                </div>
+                <div class="line-block_black"></div>
+                <div class="item">
+                    <div class="title"><span>TCP/UDP</span></div>
+                    <div class="descr">Довольно часто ICMP-трафик в сети может быть заблокирован администраторами, поэтому обнаружить хосты обычным эхо-запросом не выйдет. В таком случае можно просто отправить TCP или UDP сообщение на какой-нибудь порт, и если ответ придет,
+                        делаем вывод, что хост под этим адресом существует в сети
+                    </div>
+                </div>
+                <div class="line-block_black"></div>
+                <div class="item">
+                    <div class="title"><span>ARP</span></div>
+                    <div class="descr">ARP - это протокол канального уровня, позволяющий узнать MAC-адрес хоста по его IP и наоборот. MAC-адрес как и IP может быть полезной инфомацией для исследователя, но он может быть получен таким образом в пределах одной локальной сети,
+                        так как ARP-запрос отправляется по broadcast mac адресу (`FF:FF:FF:FF:FF:FF`) и ограничивается одной подсетью.
+                    </div>
+                </div>
+            </div>
+            <div class="tactic_black">
+                <div class="title">
+                    Класс задач, который решают инструменты
+                    <div class="descr"><span>Сетевые сканеры.</span> Данный инструмент предназначен для активного сбора информации. Он взаимодействует с хостом, и на основе полученного ответа делает вывод о наличии этого хоста в сети.</div>
+                </div>
+            </div>
+            <div class="tactic_black">
+                <div class="title">Основана на инструментах
+                    <div class="descr">Тактика основана на работе инструментов обмена сетевыми данными - на работе сетевых сканеров и сетевых протоколов</div>
+                </div>
+            </div>
+            <div class="arrows">
+                <div class="tactic_arrow"><img src="images/Arrow.png" alt=">"> <span>Nmap</span> - самый популярный инструмент для исследования сетей </div>
+                <div class="tactic_arrow"><img src="images/Arrow.png" alt=">"> <span>Hping</span> - генератор пакетов и анализатор для протокола TCP / IP </div>
+                <div class="tactic_arrow"><img src="images/Arrow.png" alt=">"> <span>MassScan</span> - массовый сканер TCP / IP портов </div>
+                <div class="tactic_arrow"><img src="images/Arrow.png" alt=">"> <span>Netdiscover</span> - простой сканер беспроводных сетей, рабоающий с протоколом ARP</div>
+            </div>
+        </div>
+    </div>
+    <div class="blue">
+        <div class="container b_blue">
+            <div class="title">
+                Алгоритм</div>
+            <div class="sub_title"> Последовательность шагов
+            </div>
+            <div class="all">
+                <div class="number">01</div>
+                <div class="descr">Определить адрес подсети, в которой будет производится поиск хостов</div><img src="images/Arrow_down.png" alt="">
+                <div class="number">02</div>
+                <div class="descr">Провести Ping-сканирование сети:
+                    <ul>
+                        <li>`nmap -sP --traceroute &lt;network&gt;` `-sP` - ping-сканирование. По умолчанию посылаются запрос на ICMP эхо-ответ и TCP ACK пакет на порт 80</li>
+                        <li>`--traceroute` - также проводить трассировку маршрута до каждого найденного хоста. Эта опция может помочь в составлении карты подсети</li>
+                    </ul>
+                </div>
+                <img src="images/Arrow_down.png" alt="">
+                <div class="number">03</div>
+                <div class="descr">Если есть подозрение на то, что ICMP-пакеты и TCP ACK сообщения блокируются сетевым экраном, можно применить другие виды сканирования:
+                    <ul>
+                        <li>`-PS` - TCP SYN пингования</li>
+                        <li>`-PU` - UDP пингование</li>
+                        <li>`-PE; -PP; -PM` - ICMP-пинг других типов: запрос временной метки (13), информационный запрос (15), запрос адресной маски (17). Многие хосты и брандмауэры могут блокировать исключительно ICMP-пакеты типа echo request, но в спецификации
+                            ICMP присутствуют еще несколько типов запросов, позволяющих получить ответ от хоста</li>
+                </div>
+            </div>
+            <div class="last">Если после выполнения команд nmap предоставил список доступных хостов, то сканирование может считаться успешным</div>
+        </div>
+    </div>
+    <div class="white">
+        <div class="container b_white">
+            <div class="title"><span>Примеры применения алгоритма</span></div>
+            <div class="tactic_w">
+                <div class="title"><img src="images/Arrow.png" alt=""> На данном шаге мы <span>ищем адрес подсети</span>, в которой будет производиться поиск хостов.</div>
+                <ul>
+                    <li>Входные данные отсутствуют </li>
+                    <li>При успешном выполнении шага мы определяемся с подсетью, которую нам необходимо исследовать.</li>
+                </ul>
+            </div>
+
+            <div class="tactic_w">
+                <div class="title"><img src="images/Arrow.png" alt=""> <span>Проводим сканирование сети</spe: 256 IP addresses (3an> </div>
+                <div class="descr">
+                    <pre>
+```bash
+
+$ nmap -sn --traceroute 192.168.88.0/24
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-03 10:08 Russia TZ 3 Standard Time
+
+Nmap scan report for router.lan (192.168.88.1)
+Host is up (0.00013s latency).
+MAC Address: 2C:C8:1B:56:C7:39 (Routerboard.com)
+TRACEROUTE
+HOP RTT     ADDRESS
+1 0.12 ms router.lan (192.168.88.1)
+
+...
+
+Nmap done: 256 IP addresses (31 hosts up) scanned in 10.51 seconds
+                </pre>
+                
+                </div></div>
+
+            
+            <div class="tactic_w">
+                <div class="title">
+                    В данном примере используется флаг `-sn`, отключающий сканирование портов на обнаруженных хостах. Флаг `-sP` не указывается, так как он используется при сканировании по умолчанию.</div>
+            </div>
+
+            <div class="tactic_descr_w">
+                <div class="big_title"><span>Nmap в выводе выдал:</span></div>
+                <div class="tactic_cont">
+
+                    <div class="item">
+                        <div class="image"><img src="images/round_arrow.png" alt=">"></div>
+                        <div class="title"><span>IP-адрес</span></div>
+                        <div class="descr">`192.168.88.1`</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="image"><img src="images/round_arrow.png" alt=">"></div>
+                        <div class="title"><span>MAC адрес</span></div>
+                        <div class="descr"> (и по нему узнал производителя сетевой карты) `2C:C8:1B:56:C7:39 (Routerboard.com)`</div>
+                    </div>
+                    <div class="item">
+                        <div class="image"><img src="images/round_arrow.png" alt=">"></div>
+                        <div class="title"><span>Маршрут traceroute</span></div>
+                        <div class="descr">до хоста</div>
+                    </div>
+                    <div class="item">
+                        <div class="image"><img src="images/round_arrow.png" alt=">"></div>
+                        <div class="title"><span>Входные данные</span></div>
+                        <div class="descr">адрес подсети</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tactic_w">
+                <div class="title">
+                    Если после выполнения команд nmap предоставил список доступных хостов, то сканирование может считаться успешным.</div>
+            </div>
+            <div class="black_hor"></div>
+
+            <div class="title"><span>Как выбирать данную тактику?</span></div>
+            <div class="sub_title">Набор критериев</div>
+            <div class="tactic_w">
+                <div class="title">
+                    Сканирование сети применяется на начальном этапе сбора инфомации для получения информации об занятых IP-адресах в сети и активных хостов за ними. Тактику применяют при отсутствии какой-либо подобной информации.</div>
+            </div>
+            <div class="tactic_w">
+                <div class="title">
+                    Эта тактика дает информацию о доступных устройствах в сети. Однако она дает только информацию об их существовании и доступности, и не более того, в отличие от тактики сканирования портов, также дающей информацию об открытых портах и сервисах, запущенных
+                    на них.</div>
+            </div>
+            <div class="tactic_w">
+                <div class="title">
+                    Для применения этой тактики как минимум должен быть известен адрес целевой подсети, все остальное выполняет сетевой сканер.</div>
+            </div>
+            <div class="tactic_w">
+                <div class="title">
+                    Сканирование сети - самый <span>быстрый и эффективный</span> способ обнаружение хостов в сети, однако это активный метод сбора информации, и использование этой тактики несет за собой высокий риск обнаружения, так как большинство современных
+                    анализаторов трафика и IDS/IPS-систем умеют распознавать работу сетевого сканера, поэтому тактику стоит использовать в случаях, когда <span>скрытность</span> не имеет особого значения для пользователя</div>
+            </div>
+
+            <div class="black_hor"></div>
+            <div class="title"><span>Как повысить эффективность тактики?</span></div>
+            <div class="tactic_w">
+                <div class="title">Эффективность тактики измеряется в трех критериях:</div>
+            </div>
+            <div class="criteries">
+                <div class="title"><img src="images/Arrow.png" alt=">"> <span>Скорость</span></div>
+                <ul>
+                    <li>указав опцию `-sn`, говорящей nmap не делать сканирование портов после обнаружения хоста. Таким образом время не будет тратиться на сканирование множества портов, которые nmap сканирует по умолчанию и будет происходить чисто обнаружение
+                        хостов
+                    </li>
+                    <li>указав опцию `-n`, отключающей разрешение DNS-имен. По умолчанию при обнаружении хостов nmap также производит обратное DNS разрешение, для того, чтобы по найденым ip-адресам попробовать узнать их доменные имена. </li>
+                    <li>Это не всегда требуется и отключение разрешения имен может ускорить процесс сканирования</li>
+                    <li>используя опции таймингов `-T3, -T4, -T5, и т.д.`, которые изменяют интервал между сетевыми запросами (чем выше число, тем меньше интервалы между запросами и тем быстрее выполнится скан) Возможные варианты: paranoid(0), sneaky(1),
+                        polite(2), normal(3), aggressive(4) и insane(5). Первые два помогают уклоняться от идентификации атакующего. 2 режим замедляет сканирование. 3 режим это по умолчанию, то есть никакой оптимизации не будет по данному ключу. 4 режим
+                        ускоряет сканирование. 5 режим очень быстро сканирует, но есть вероятность в потере точности при сканировании. Пример: `nmap -Т4 &lt;example.com&gt;`.</li>
+                </ul>
+            </div>
+            <div class="criteries">
+                <div class="title"><img src="images/Arrow.png" alt=">"> <span>Скрытность</span></div>
+                <ul>
+                    <li>использовать опцию ` --data-length &lt;length&gt;`, добавляющей &lt;d&gt; случайных байтов информации к каждому пакету, что помогает сделать сканирование менее заметным и более похожим на пакеты, генерируемые программой ping.</li>
+                    <li>добавить опцию `--randomize-hosts`, перемешивающую сканирование хостов, чтобы сделать сканированиее менее подозрительным при анализе трафика</li>
+                </ul>
+            </div>
+            <div class="criteries">
+                <div class="title"><img src="images/Arrow.png" alt=">"> <span>Качество результатов</span></div>
+                <ul>
+                    <li>
+                        повышается за счет использования разных видов сканирования, основынных на разных протоколах - таким образом если некоторые протоколы фильтруются брандмауэром, результат можно получить, используя другие. Например, довольно часто системными администраторами
+                        блокируется трафик ICMP, в таком случае можно попробовать TCP/UDP пинг
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="blue">
+        <div class="container m_blue">
+            <div class="title">Возможно ли улучшить тактику за счет комбинаций тактик, алгоритмов или инструментов?</div>
+            <div class="all">
+                <div class="descr">Для наиболее сложных задач сканирования, например при больших количествах узлов, можно пользоваться комбинированием алгоритмов и инструментов: например, если целевая сеть большая и может содержать несколько подсетей, можно быстро прогнать
+                    MassScan по всей сети, чтобы определить подсети в ней, а затем уже по найденным подсетям меньшего размера идти nmap-ом</div>
+                <div class="code">
+                    <div class="title"><img class="image_custom" src="images/Arrow_white.png" alt=">"> Пример использования MassScan:
+                        <div class="descr">
+                            masscan 10.0.0.0/8 192.168.0.0/16 172.16.0.0/12 -p80 --open-only</div>
+                    </div>
+                </div>
+                <div class="descr">Здесь идет сканирование трех больших сетей `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12` по 80 порту</div>
+                <div class="descr">Для повышения скрытности можно реализовать возможность использования фиктивных хостов (decoys) с опцией `-D` для того, чтобы скрыть IP-адрес атакующего от IDP/IPS систем</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
