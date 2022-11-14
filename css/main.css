@@ -1,331 +1,340 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    /* max-width: 1960px; */
-    font-family: 'TT Firs Neue';
-    margin: 0 auto;
-    font-size: 18px;
-}
-
-.container {
-    margin: 0 12vw 0 12vw;
-}
-
-.blue_image {
-    background-image: url(../images/background.png);
-    background-size: cover;
-    color: #ffffff;
-}
-
-.blue {
-    background-image: url(../images/blue_background.png);
-    background-size: cover;
-    color: #ffffff;
-}
-
-.blue>.container,
-.white>.container {
-    padding: 7vh 0;
-}
-
-.header {
-    padding-top: 5vh;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header_contacts {
-    font-family: 'TT Firs Neue';
-    font-style: normal;
-    display: flex;
-    justify-content: space-between;
-    gap: 1vw;
-    line-height: 36px;
-}
-
-.blue_title {
-    margin-top: 19vh;
-    font-weight: 500;
-    font-size: 5em;
-}
-
-.blue_title_small,
-.b_blue>.title {
-    font-size: 3em;
-}
-
-.blue_title_small {
-    margin-top: 15vh;
-}
-
-.blue_enter {
-    margin-top: 7vh;
-    display: flex;
-    justify-content: flex-start;
-    gap: 5vw;
-}
-
-.blue_entr_item {
-    font-weight: 400;
-    font-size: 2em;
-}
-
-.blue_entr_item_descr {
-    margin-top: 2vh;
-    font-weight: 400;
-    font-size: 0.5em;
-}
-
-.title_entr {
-    margin-top: 6.5vh;
-}
-
-.blue_require,
-.white_rec {
-    display: flex;
-    gap: 4.5vw;
-}
-
-.require_item,
-.line-block,
-.white_rec>.line-block_black,
-.white_rec>.item {
-    margin-top: 5.5vh;
-    max-width: 13vw;
-}
-
-.line-block {
-    border-right: #ffffff 1px solid;
-}
-
-.req_item_numb {
-    font-size: 7em;
-}
-
-.req_item_descr {
-    font-weight: 400;
-    font-size: 1em;
-}
-
-.blue_last {
-    margin-top: 6.5vh;
-    display: flex;
-    gap: 7vw;
-}
-
-.last_item {
-    gap: 18px;
-}
-
-.concept {
-    margin: 3vh 0 10vh 0;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 18px;
-}
-
-.item_concept {
-    margin: 0 auto;
-    padding: 0.5em 2em;
-    background-color: #3314F1;
-    border-radius: 1em;
-    font-size: 0.5em;
-}
-
-.tactic {
-    display: flex;
-    justify-content: flex-start;
-    gap: 2vw;
-}
-
-.tactic_title {
-    font-weight: 500;
-    font-size: 3em;
-    min-width: 50%;
-}
-
-.tactic_descr {
-    font-size: 0.3em;
-    font-weight: normal;
-    color: #000;
-}
-
-.tactic_black {
-    margin-top: 10vh;
-    max-width: 55%;
-}
-
-.tactic_black>.title,
-.b_blue>.sub_title,
-.b_blue>.all>.number {
-    font-weight: 400;
-    font-size: 2.2em;
-}
-
-.tactic_black>.title>.descr {
-    margin-top: 0.7em;
-    font-size: 0.4em;
-}
-
-.white_rec>.item>.title {
-    font-size: 1.7em;
-}
-
-.line-block_black {
-    border-right: #000000 1px solid;
-}
-
-.white_rec>.item>.descr {
-    font-size: 0.7em;
-    margin-top: 0.5vh;
-}
-
-.arrows {
-    margin-top: 10vh;
-}
-
-.arrows>.tactic_arrow {
-    margin-top: 0.7em;
-    font-size: 1em;
-    line-height: 1em;
-}
-
-.arrows>.tactic_arrow>img,
-.image_custom {
-    height: 1em;
-}
-
-.b_blue {
-    color: #ffffff;
-    max-width: 55%;
-}
-
-.b_blue>.sub_title {
-    margin-top: 4vh;
-}
-
-.b_blue>.all {
-    padding-left: 1em;
-}
-
-.b_blue>.all>div,
-.b_blue>.all>img,
-.b_blue>.all>div>ul>li {
-    margin-top: 3vh;
-}
-
-.b_blue>.all>.descr>ul {
-    padding-left: 1em;
-}
-
-.b_blue>.last {
-    margin-top: 6vh;
-}
-
-.b_white>.title {
-    font-size: 3em;
-}
-
-.b_white>.tactic_w {
-    margin-top: 4vh;
-}
-
-.b_white>.tactic_w>.title {
-    line-height: 1em;
-    max-width: 75%;
-}
-
-.b_white>.tactic_w>ul {
-    margin-top: 2vh;
-}
-
-.b_white>.tactic_w>.descr>pre {
-    margin-top: 2vh;
-    margin-left: 4em;
-    font-size: 0.7em;
-}
-
-.b_white>.tactic_w>ul>li {
-    margin-left: 4em;
-    font-size: 0.7em;
-}
-
-.b_white>.tactic_w>.title>img {
-    height: 1em;
-}
-
-.tactic_cont {
-    display: flex;
-    gap: 5vw;
-}
-
-.tactic_cont>.item {
-    width: 25%;
-}
-
-.tactic_cont>.item>div {
-    margin-top: 1vh;
-}
-
-.tactic_cont>.item>.descr {
-    font-size: 0.7em;
-}
-
-.tactic_cont>.item>.image>img,
-.criteries>.title>img {
-    width: 1.5em;
-}
-
-.b_white>.sub_title {
-    font-weight: 400;
-    font-size: 2.2em;
-    margin-top: 4vh;
-}
-
-.criteries>.title {
-    margin-top: 3vh;
-    font-size: 1.2em;
-}
-
-.criteries>ul>li {
-    margin: 2vh 0 0 3vw;
-}
-
-.black_hor {
-    margin: 7vh 0;
-    border-top: 1px solid black;
-}
-
-.tactic_descr_w>.big_title {
-    margin-top: 2vh;
-    font-size: 1.2em;
-}
-
-.m_blue>.title {
-    font-size: 3em;
-}
-
-.m_blue>.all {
-    margin-top: 7vh;
-}
-
-.m_blue>.all>div {
-    margin-top: 3vh;
-}
-
-.m_blue>.all>.code>.title {
-    line-height: 1em;
-}
-
-.m_blue>.all>.code>.title>.descr {
-    margin: 1em;
-    font-size: 0.7em;
-}
-
-span {
-    color: #3314f1;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            /* max-width: 1960px; */
+            font-family: 'TT Firs Neue';
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .container {
+            margin: 0 12vw 0 12vw;
+        }
+        
+        .blue_image {
+            background-image: url(../images/background.png);
+            background-size: cover;
+            color: #ffffff;
+        }
+        
+        .blue {
+            background-image: url(../images/blue_background.png);
+            background-size: cover;
+            color: #ffffff;
+        }
+        
+        .blue>.container,
+        .white>.container {
+            padding: 7em 0;
+        }
+        
+        .header {
+            padding-top: 5em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header_contacts {
+            font-family: 'TT Firs Neue';
+            font-style: normal;
+            display: flex;
+            justify-content: space-between;
+            gap: 1vw;
+            line-height: 36px;
+        }
+        
+        .blue_title {
+            margin-top: 2em;
+            font-weight: 500;
+            font-size: 5em;
+        }
+        
+        .blue_title_small,
+        .b_blue>.title {
+            font-size: 3em;
+        }
+        
+        .blue_title_small {
+            margin-top: 2em;
+        }
+        
+        .blue_enter {
+            margin-top: 7em;
+            display: flex;
+            justify-content: flex-start;
+            gap: 5vw;
+        }
+        
+        .blue_entr_item {
+            font-weight: 400;
+            font-size: 2em;
+        }
+        
+        .blue_entr_item_descr {
+            margin-top: 2em;
+            font-weight: 400;
+            font-size: 0.5em;
+        }
+        
+        .title_entr {
+            margin-top: 2.5em;
+        }
+        
+        .blue_require,
+        .white_rec {
+            display: flex;
+            gap: 4.5vw;
+        }
+        
+        .require_item,
+        .line-block,
+        .white_rec>.line-block_black,
+        .white_rec>.item {
+            margin-top: 3.5em;
+            max-width: 13vw;
+        }
+        
+        .line-block {
+            border-right: #ffffff 1px solid;
+        }
+        
+        .req_item_numb {
+            font-size: 7em;
+        }
+        
+        .req_item_descr {
+            font-weight: 400;
+            font-size: 1em;
+        }
+        
+        .blue_last {
+            margin-top: 3.5em;
+            display: flex;
+            gap: 3vw;
+        }
+        
+        .last_item {
+            gap: 8px;
+        }
+        
+        .concept {
+            margin: 1em 0 3em 0;
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 8px;
+        }
+        
+        .item_concept {
+            margin: 0 auto;
+            padding: 0.5em 2em;
+            background-color: #3314F1;
+            border-radius: 1em;
+            font-size: 0.5em;
+        }
+        
+        .tactic {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2vw;
+        }
+        
+        .tactic_title {
+            font-weight: 500;
+            font-size: 3em;
+            min-width: 50%;
+        }
+        
+        .tactic_descr {
+            font-size: 0.3em;
+            font-weight: normal;
+        }
+        
+        .tactic_black {
+            color: #000;
+            margin-top: 5em;
+            max-width: 55%;
+        }
+        
+        .tactic_black>.title,
+        .b_blue>.sub_title,
+        .b_blue>.all>.number {
+            font-weight: 400;
+            font-size: 2.2em;
+        }
+        
+        .tactic_black>.title>.descr {
+            margin-top: 0.7em;
+            font-size: 0.4em;
+        }
+        
+        .white_rec>.item>.title {
+            font-size: 1.7em;
+        }
+        
+        .line-block_black {
+            border-right: #000000 1px solid;
+        }
+        
+        .white_rec>.item>.descr {
+            font-size: 0.7em;
+            margin-top: 0.5em;
+        }
+        
+        .arrows {
+            margin-top: 3em;
+        }
+        
+        .arrows>.tactic_arrow {
+            margin-top: 0.7em;
+            font-size: 1em;
+            line-height: 1em;
+        }
+        
+        .arrows>.tactic_arrow>img,
+        .image_custom {
+            height: 1em;
+        }
+        
+        .b_blue {
+            color: #ffffff;
+            max-width: 55%;
+        }
+        
+        .b_blue>.sub_title {
+            margin-top: 2em;
+        }
+        
+        .b_blue>.all {
+            padding-left: 0.5em;
+        }
+        
+        .b_blue>.all>div,
+        .b_blue>.all>img,
+        .b_blue>.all>div>ul>li {
+            margin-top: 1em;
+        }
+        
+        .b_blue>.all>.descr>ul {
+            padding-left: 1em;
+        }
+        
+        .b_blue>.last {
+            margin-top: 3em;
+        }
+        
+        .b_white>.title {
+            font-size: 3em;
+        }
+        
+        .b_white>.tactic_w {
+            margin-top: 2em;
+        }
+        
+        .b_white>.tactic_w>.title {
+            line-height: 1em;
+            max-width: 75%;
+        }
+        
+        .b_white>.tactic_w>ul {
+            margin-top: 2em;
+        }
+        
+        .b_white>.tactic_w>.descr>pre {
+            margin-top: 1em;
+            margin-left: 4em;
+            font-size: 0.7em;
+        }
+        
+        .b_white>.tactic_w>ul>li {
+            margin-left: 4em;
+            font-size: 0.7em;
+        }
+        
+        .b_white>.tactic_w>.title>img {
+            height: 1em;
+        }
+        
+        .tactic_cont {
+            display: flex;
+            gap: 5vw;
+        }
+        
+        .tactic_cont>.item {
+            width: 25%;
+        }
+        
+        .tactic_cont>.item>div {
+            margin-top: 1em;
+        }
+        
+        .tactic_cont>.item>.descr {
+            font-size: 0.7em;
+        }
+        
+        .tactic_cont>.item>.image>img,
+        .criteries>.title>img {
+            width: 1.5em;
+        }
+        
+        .b_white>.sub_title {
+            font-weight: 400;
+            font-size: 2.2em;
+            margin-top: 2em;
+        }
+        
+        .criteries>.title {
+            margin-top: 3em;
+            font-size: 1.2em;
+        }
+        
+        .criteries>ul>li {
+            margin: 1em 0 0 3vw;
+        }
+        
+        .black_hor {
+            margin: 7em 0;
+            border-top: 1px solid black;
+        }
+        
+        .tactic_descr_w>.big_title {
+            margin-top: 2em;
+            font-size: 1.2em;
+        }
+        
+        .m_blue>.title {
+            font-size: 3em;
+        }
+        
+        .m_blue>.all {
+            margin-top: 3em;
+        }
+        
+        .m_blue>.all>div {
+            margin-top: 1.5em;
+        }
+        
+        .m_blue>.all>.code>.title {
+            line-height: 1em;
+        }
+        
+        .m_blue>.all>.code>.title>.descr {
+            margin: 1em;
+            font-size: 0.7em;
+        }
+        
+        span {
+            color: #3314f1;
+        }
+        
+        @media print {
+            /* Стиль для печати */
+            body {
+                /* font-family: Times, 'Times New Roman', serif; */
+                font-size: 13px;
+                /* Шрифт с засечками */
+            }
+        }
